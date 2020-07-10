@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="jumbotron">
+  <p style="font-size:150%; text-align: right; color: rgb(81, 121, 121)" (click) = share()>
+    SHARE
+  </p>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let p of FilterProducts">
+      <div style="font-size:400%"> 
+        {{p.subProductName}}
+        <h3>By {{p.vendorName}}</h3>
+      </div>
+      
+      <table style="width:100%">
+        <tr>
+          <th></th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <th rowspan="10">
+            <img src="assets/images/product" alt="image" style="width:350px;height:300px;">
+          </th>
+          <td style="font-size:250%; text-align: right; ">
+            ₹{{p.price - (p.price * 0.1) | number }}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="font-size:180%; text-align: left">
+              <s>₹{{p.price | number}} </s>   
+          </td>
+        </tr>
+
+        <tr>
+          <td style="font-size:150%; text-align: left">
+            Save ₹{{p.price -(p.price - (p.price * 0.1)) | number}}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="font-size:150%; text-align: left">
+            <br>
+            Description:
+          </td>
+        </tr>
+
+        <tr>
+          <td style="font-size:130%; text-align: left">
+            Rating: <span class="red-star">★★★★</span>
+            <i class="fa fa-star-half-full" style="font-size:18px;color: gold"></i>
+        
+          </td>
+        </tr>
+      </table>
+
+      <br>
+          <div style="text-align:center;">
+              <button class="btn btn-outline-success"  (click) = addToGateway(p) [routerLink] ="['/gateway/', p.price - (p.price * 0.1)]"
+              style="font-size:150%; color: black;">BUY NOW</button>
+         
+              &nbsp; &nbsp; &nbsp; &nbsp;
+          
+              <button type="button" class="btn btn-outline-danger" (click) = addToCart(p.subProdId)
+              style="font-size:150%; color: black;">ADD TO CART</button>
+          </div>
+          <br>
+          
+    </div>
+  </div>
+</div>

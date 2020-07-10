@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink = "/home">
+        <img src="assets/images/logo_main.png" alt="image" style="width:50px;height:50px;"> 
+    </a>
+    &nbsp;&nbsp;&nbsp;
+
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+            <h3>
+                <a class="nav-link" routerLink = "/sign-in">SIGN-IN</a>
+            </h3>  
+        </li>
+
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+            <h3>
+                <a class="nav-link" routerLink = "/track-order">Track Orders</a>
+            </h3>  
+        </li>
+
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+            <h3>
+                <a class="nav-link" routerLink = "/cart">Cart</a>
+            </h3>
+        </li> 
+
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item active">
+            <h3>
+                <a class="nav-link" routerLink = "/sign-in">Hello, {{username}}</a>
+            </h3>  
+        </li>
+
+        &nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+            <h3>
+                <a class="nav-link" routerLink = "/vendor">Vendor</a>
+            </h3>
+        </li> 
+
+      </ul>
+    </div>
+  </nav>
+
+  

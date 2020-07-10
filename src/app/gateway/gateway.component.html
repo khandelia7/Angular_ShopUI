@@ -1,0 +1,124 @@
+<br>
+<div>
+  <p style="font-size:350%; text-align:center"><strong>Payment Gateway</strong> </p> 
+</div>
+
+<h3>
+    <p style="font-size:100%; text-align:left"><strong>Total Amount Payment is ₹ {{total | number}}</strong></p> 
+</h3>
+ 
+  <div class="row">
+    <div class = "col-md-6">
+        <form (ngSubmit)="onFormSubmit()" [formGroup]="cardForm">
+            <div class="form-group w-50">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="name" class="form-control" id="name" aria-describedby="emailHelp" 
+                placeholder="Enter Full Name Eg: Akash Khandelia"
+                formControlName="name" required
+                >
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div *ngIf="name.errors.required"> Name is required. </div>
+                    <div *ngIf="name.errors.minlength"> Name must be at least 4 characters long. </div>
+                    <div *ngIf="name.errors.maxlength"> Name must be at most 15 characters long. </div>
+                    <div *ngIf="name.errors.pattern" class="help is-danger"> Name should contains characters.</div>
+                </div>
+                <small id="nameHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+            </div>
+            
+            <div class="form-group w-50">
+                <label for="exampleInputEmail1">Card Number:</label>
+                <input type="cardNumber" class="form-control" id="cardNumber" aria-describedby="cardNumberHelp" 
+                placeholder="Enter Card Number Eg: XXXX-XXXX-XXXX-XXXX"
+                formControlName="cardNumber">
+                <div *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)" class="alert alert-danger">
+                    <div *ngIf="cardNumber.errors.required"> Card Number is required. </div>
+                    <div *ngIf="cardNumber.errors.pattern" class="help is-danger"> 
+                        Should be in Format XXXX-XXXX-XXXX-XXXX.
+                    </div>
+                    <div *ngIf="cardNumber.errors.minlength"> 
+                        Card Number should contain exactly 16 digit 
+                    </div>
+                    <div *ngIf="cardNumber.errors.maxlength">  
+                        Card Number should contain exactly 16 digit
+                    </div>   
+                </div>
+            </div>
+
+            <div  class="form-group w-50">
+                <label class="col-form-label" for="dateInputDefault">Expiration (MM/YY)</label>
+                <input type="text" class="form-control" placeholder="Enter Date Eg: MM/YY" id="dateInputDefault"
+                formControlName="date">
+                <div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger">
+                    <div *ngIf="date.errors.required"> Date is required. </div>
+                    <div *ngIf="date.errors.pattern" class="help is-danger"> Date should be in Format MM/YY.</div>
+                </div>
+            </div>
+
+            <div  class="form-group w-50">
+                <label class="col-form-label"  for="codeInputDefault">Security Code</label>
+                <input type="text" class="form-control" placeholder="Enter Security Code Eg: XXX" id="codeInputDefault"
+                formControlName="code">
+                <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+                    <div *ngIf="code.errors.required"> Security Code is required. </div>
+                    <div *ngIf="code.errors.minlength"> 
+                        Value you entered is {{code.errors.minlength.actualLength}} Digit long,
+                        but it must be {{code.errors.minlength.requiredLength}} .
+                    </div>
+                    <div *ngIf="code.errors.maxlength"> 
+                        Value you entered is {{code.errors.maxlength.actualLength}} Digit long,
+                        but it must be {{code.errors.maxlength.requiredLength}}
+                    </div>
+                    <div *ngIf="code.errors.pattern" class="help is-danger"> Code must contain exactly 3 digit. </div>
+                </div>
+            </div>
+
+            <h5 >
+              <button  type="submit" [disabled]="!cardForm.valid" class="btn btn-outline-success" (click) = gateway(total)
+              style="font-size:100%; color: black;">Make Payment</button>
+
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <button type="button" class="btn btn-outline-danger" (click)="onReset()"
+              style="font-size:100%;">RESET</button>
+            </h5>
+
+            
+        </form>
+    </div>
+
+
+    <div class = "col-md-6">
+        <div class="credit-card-wrap">
+            <div class="mk-icon-world-map"></div>
+            <div class="credit-card-inner">
+                <header class="header">
+                    <div class="credit-logo">
+                        <div class="shape"><span class="txt">AK</span></div> <span class="text">Public Bank of Everyone</span>
+                    </div>
+                </header>
+                <div class="mk-icon-sim"></div>
+                <div class="credit-font credit-card-number">{{cardForm.controls.cardNumber.value}}</div>
+                <footer class="footer">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <div class="credit-card-date"><span class="title">Expires End</span><span class="credit-font">  {{cardForm.controls.date.value}}</span></div>
+                            <div class="credit-font credit-author">{{cardForm.controls.name.value}}</div>
+                        </div>
+                        <div class="pull-right"><div class="mk-icon-visa"></div></div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+<h2 style="font-size:250%; text-align:center"><strong>SIGN-IN</strong> </h2>
+
+<div class="container">
+    <form (submit)="onFormSubmit()" [formGroup] = "loginForm">
+        <div class="form-group">
+            <label for="exampleInputName1" style="font-size:150%;">Username:</label>
+            <input type="name" class="form-control" id="name" 
+            aria-describedby="nameHelp" 
+            placeholder="Enter Your UserName" style="font-size:120%;"
+            formControlName="username" required>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger" style="font-size:90%; color: red;">
+                <div *ngIf="username.errors.required" > UserName is required. </div>
+                <div *ngIf="username.errors.minlength"> UserName must be at least 4 characters long. </div>
+                <div *ngIf="username.errors.maxlength"> UserName must be at most 15 characters long. </div>
+                <div *ngIf="username.errors.pattern" class="help is-danger"> UserName should contains characters.</div>
+            </div>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your detail with anyone else.</small>
+        </div>
+  
+        <div class="form-group">
+            <label for="exampleInputPassword1" style="font-size:150%;">Password:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" 
+            placeholder="Password"style="font-size:120%;"
+            formControlName="password">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="font-size:90%; color: red;">
+                <div *ngIf="password.errors.required"> Password is required. </div>
+                <div *ngIf="password.errors.minlength"> 
+                    Password should contain minimum 5 Expression.
+                </div>
+                <div *ngIf="password.errors.maxlength">  
+                    Password should contain maximum 15 Expression.
+                </div>   
+            </div>
+          </div>
+  
+          <br>
+          <div style="text-align:center;">
+              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-success"
+              style="font-size:150%; color: black;">CONTINUE</button>
+         
+              &nbsp; &nbsp; &nbsp; &nbsp;
+          
+              <button type="button" class="btn btn-outline-danger" (click)="onReset()"
+              style="font-size:150%; color: black;">RESET</button>
+          </div>
+          <br>
+
+    </form>
+
+    <p> 
+        By continuing, you agree to 
+         <b style="color:black ">Conditions of Use</b> and 
+         <b style="color:black ">Privacy Notice.</b>
+    </p>
+    <br>
+    <p>----------------------------------------------------------------------------------------------------------------------
+        <b style="font-size:140%; text-align:center">FIRST TIME?</b>
+        ---------------------------------------------------------------------------------------------------------------------
+    </p>
+    <br>
+    <div style="text-align:center;">
+        <button type="submit" class="btn btn-outline-success" (click)="onSignUP()"
+              style="font-size:200%; color: black;">Create your account</button>
+    </div>
+    
+  
+ </div>
+  
+ 

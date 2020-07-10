@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="jumbotron">
+    <h2 style="font-size:250%"><strong>{{title}}</strong> </h2>
+    <br>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let p of FilterProducts">
+            <div class="card border-dark lb-3">
+                <div class="card-header" style="font-size:180%"> 
+                    {{p.subProductName}}
+                    <h6>By {{p.vendorName}}</h6>
+                </div>
+                <div class="card-body">
+                    <img src="assets/images/product" alt="image" style="width:260px;height:220px;">
+
+                    <h4 style="font-size:150%; text-align: left" >
+                        ₹{{p.price - (p.price * 0.1) | number }}
+                        <p style="font-size:70%; text-align: left">
+                            <s>₹{{p.price | number}} </s>
+                            &nbsp;
+                            Save ₹{{p.price -(p.price - (p.price * 0.1)) | number}}
+                            ({{ ((p.price -(p.price - (p.price * 0.1))) *100 )/p.price | number}}%)
+                        </p>
+                        <p style="font-size:65%; text-align: left" >  
+                            Rating: <span class="red-star">★★★★</span>
+                            <i class="fa fa-star-half-full" style="font-size:13px;color: gold"></i>
+                        </p>
+                    </h4> 
+                </div>
+
+                <p style="font-size:90%; text-align: right" >
+                    <a class="nav-link" [routerLink] ="['/home4/', p.subProdId]" class="card-link" 
+                    style="color:cornflowerblue;">More Detail</a>
+                </p> 
+            </div>
+            <br><br>
+        </div>
+        
+    </div>
+
+</div>
+<app-footer></app-footer>

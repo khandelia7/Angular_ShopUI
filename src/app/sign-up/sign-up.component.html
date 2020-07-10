@@ -1,0 +1,83 @@
+
+<h2 style="font-size:250%; text-align:center"><strong>SIGN-UP</strong> </h2>
+<div class="container">
+    <form (submit)="onFormSubmit()" [formGroup]="SignupForm">
+        <div class="form-group">
+            <label for="exampleInputName1" style="font-size:150%;">Name:</label>
+            <input type="name" class="form-control" id="name" 
+            aria-describedby="nameHelp" 
+            placeholder="Enter Your Name" style="font-size:120%;"
+            formControlName="name" required>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger" style="font-size:90%; color: red;">
+                <div *ngIf="name.errors.required" > Name is required. </div>
+                <div *ngIf="name.errors.minlength"> Name must be at least 4 characters long. </div>
+                <div *ngIf="name.errors.maxlength"> Name must be at most 15 characters long. </div>
+                <div *ngIf="name.errors.pattern" class="help is-danger"> Name should contains characters.</div>
+            </div>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your detail with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputMobile" style="font-size:150%;">Mobile:</label>
+            <input  class="form-control" 
+            placeholder="Mobile Number" style="font-size:120%;"
+            formControlName="mobile" required>
+            <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)" class="alert alert-danger" style="font-size:90%; color: red;">
+                <div *ngIf="mobile.errors.required"> Mobile Number is required. </div>
+                <div *ngIf="mobile.errors.pattern" class="help is-danger"> 
+                    Mobile Number must contain digit only.
+                </div>
+                <div *ngIf="mobile.errors.minlength"> 
+                    Mobile Number should contain exactly 10 digit. 
+                </div>
+                <div *ngIf="mobile.errors.maxlength">  
+                    Mobile Number should contain exactly 10 digit.
+                </div>   
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1" style="font-size:150%;">Password:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" 
+            placeholder="Password"style="font-size:120%;"
+            formControlName="password">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger" style="font-size:90%; color: red;">
+                <div *ngIf="password.errors.required"> Password is required. </div>
+                <div *ngIf="password.errors.minlength"> 
+                    Password should contain minimum 5 Expression.
+                </div>
+                <div *ngIf="password.errors.maxlength">  
+                    Password should contain maximum 15 Expression.
+                </div>   
+            </div>
+          </div>
+
+        <br>
+        <div style="text-align:center;">
+            <button type="submit" [disabled]="!SignupForm.valid" class="btn btn-outline-success"
+            style="font-size:150%; color: black;">CONTINUE</button>
+       
+            &nbsp; &nbsp; &nbsp; &nbsp;
+        
+            <button type="button" class="btn btn-outline-danger" (click)="onReset()"
+            style="font-size:150%; color: black;">RESET</button>
+        </div>
+        <br>
+          
+    </form>
+
+    <h4>--------------------------------------------------------
+        --------------------------------------------------------
+        --------------------------------------------------------
+    </h4>
+
+    <p class="card-text" style="text-align:left">
+        Already have an account?
+        <a class="nav-link" routerLink ="/sign-in" 
+        class="card-link"  style="color:cornflowerblue"> Sign-in</a>
+    </p>
+
+ </div>
+ 
+  
+ 

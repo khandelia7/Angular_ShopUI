@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h2 style="font-size:250%"><strong>{{title}}</strong> </h2>
+  <br>
+  <div *ngFor="let p of FilterProducts">
+    <div class="card border-dark lb-3">
+      <div class="card-header" style="font-size:180%">{{p.productName}}</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3" *ngFor="let q of arr1">
+            <img src="assets/sub-category/{{p.productName}}{{q}}" alt="image" style="width:300px;height:300px;">
+          </div>
+        </div>
+      </div>
+      <p style="font-size:120%; text-align: right">
+        <a class="nav-link" [routerLink]="['/home3/', p.productName]" class="card-link" (click)="getSelectedCategory(p)"
+          style="color:cornflowerblue;">Explore More</a>
+      </p>
+    </div>
+    <br><br>
+  </div>
+</div>
+<app-footer></app-footer>

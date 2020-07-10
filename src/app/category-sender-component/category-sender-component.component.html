@@ -1,0 +1,153 @@
+ 
+  <div class="jumbotron">
+    <h2 style="font-size:250%"><strong>Category List</strong> </h2>
+    <br>
+    <div class="row">
+      <div class="col-sm-3" >
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c1.categoryName}}</div>
+            <div class="card-body">
+                <div class= "row">
+                    <div class="col-sm-6">
+                        <img src="assets/images/fashion1.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="assets/images/fashion2.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                </div>
+                <br>
+                <div class= "row">
+                    <div class="col-sm-6">
+                        <img src="assets/images/fashion3.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="assets/images/fashion4.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                </div>
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c1.categoryName]" class="card-link" (click)="getSelectedCategory(c1)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c2.categoryName}}</div>
+            <div class="card-body">
+                <img src="assets/images/TV_Appliances_Electronics_1.jpg" alt="image" style="width:280px;height:280px;"> 
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c2.categoryName]" class="card-link" (click)="getSelectedCategory(c2)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c3.categoryName}}</div>
+            <div class="card-body">
+                <img src="assets/images/home_kitchen1.jpg" alt="image" style="width:280px;height:130px;">
+                <br> <br>
+                <img src="assets/images/home_kitchen2.jpg" alt="image" style="width:280px;height:130px;">
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c3.categoryName]" class="card-link" (click)="getSelectedCategory(c3)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c4.categoryName}}</div>
+            <div class="card-body">
+                <div class= "row">
+                    <div class="col-sm-6">
+                        <img src="assets/images/Car_Motorbike1.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="assets/images/Car_Motorbike2.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                </div>
+                <br>
+                <img src="assets/images/Car_Motorbike3.jpg" alt="image" style="width:280px;height:140px;">
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c4.categoryName]" (click)="getSelectedCategory(c4)" class="card-link"  style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+        <br> <br>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c5.categoryName}}</div>
+            <div class="card-body">
+                <div class= "row">
+                    <div class="col-sm-6">
+                        <img src="assets/images/Sports_Fitness_Bags_Luggage1.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="assets/images/Sports_Fitness_Bags_Luggage2.jpg" alt="image" style="width:130px;height:120px;"> 
+                    </div>
+                </div>
+                <br>
+                <img src="assets/images/Sports_Fitness_Bags_Luggage3.jpg" alt="image" style="width:280px;height:140px;">
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c5.categoryName]" (click)="getSelectedCategory(c5)" class="card-link"  style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c6.categoryName}}</div>
+            <div class="card-body">
+                <img src="assets/images/Movies_Music_Video Games1.jpg" alt="image" style="width:280px;height:130px;">
+                <br> <br>
+                <img src="assets/images/Movies_Music_Video Games2.jpg" alt="image" style="width:280px;height:130px;">
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c6.categoryName]" class="card-link" (click)="getSelectedCategory(c6)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c7.categoryName}}</div>
+            <div class="card-body">
+                <img src="assets/images/Daily_essentials1.jpg" alt="image" style="width:280px;height:130px;">
+                <br> <br>
+                <img src="assets/images/Daily_essentials2.jpg" alt="image" style="width:280px;height:130px;">
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c7.categoryName]" class="card-link" (click)="getSelectedCategory(c7)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card border-dark lb-3" >
+            <div class="card-header" style="font-size:120%">{{c8.categoryName}}</div>
+            <div class="card-body">
+                <img src="assets/images/Safety_security1.jpg" alt="image" style="width:280px;height:280px;"> 
+                <br>
+                <p class="card-text" style="text-align:right">
+                    <a class="nav-link" [routerLink] ="['/home2/', c8.categoryName]" class="card-link" (click)="getSelectedCategory(c8)" style="color:cornflowerblue">See More</a>
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  

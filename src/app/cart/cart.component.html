@@ -1,0 +1,49 @@
+<br>
+<div>
+  <p style="font-size:250%; text-align:right"><strong>Cart ({{c}})</strong> </p>
+  <p style="font-size:350%"><strong>Cart Info</strong> </p> 
+</div>
+
+
+<h4 align="right">
+  <button type="button" class="btn btn-link">
+    <a [routerLink]="['/home']">Back to shopping</a>
+  </button>
+</h4>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr style="font-size:130%; text-align: center">
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">DISCOUNT PRICE</th>
+      <th scope="col">TOTAL PRICE</th>
+      <th scope="col">COMMENT</th>
+    </tr>
+  </thead>
+  <tbody style="font-size:130%; text-align: center">
+    <tr *ngFor="let item of FilterProducts">
+      <td>{{item.subProdId}}</td>
+      <td>{{item.subProductName}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.price -(item.price - (item.price * 0.1)) | number}}</td>
+      <td style="font-size:150%;">₹ {{item.price - (item.price * 0.1) | number }}</td>
+      <td><a (click)="remove(item.subProdId)">Remove</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 align="center">
+  Total ({{c}} items): ₹{{total | number}} <br>
+</h1>
+<p style="font-size:200%; text-align: center"> [You Save: ₹{{discount | number}}]</p>
+
+<h5 align="right">
+  <button  class="btn btn-outline-success" (click) = gateway(c)
+              style="font-size:150%; color: black;">BUY NOW</button>
+</h5>
+
+
+
